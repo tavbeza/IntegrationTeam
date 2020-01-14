@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home TaskIt</title>
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/mainWindow.css">
+
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-nav-demo"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a href="javascript:void(0);" onclick="mainwindow()" class="navbar-brand">TaskIt</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+				<ul class="nav navbar-nav">
+
+					<li><a href="javascript:void(0);" onclick="insertEmployee()">Employees</a></li>
+					<li><a href="javascript:void(0);" onclick="insertDepartment()">Department</a></li>
+					<li><a href="javascript:void(0);" onclick="insertTasks()">Tasks</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="createuser.html">Sign Up</a></li>
+					<li><a href="loginuser.html">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+<div>
+	<img alt="Logo" class="center" src="https://task.io/assets/landing-v3/logo-taskio-255b238d6202580ceecc846bcdefbb7d.png">
+</div>
+
+<div>
+	<h1>We Manage Your Tasks!</h1>
+</div>
+	<!-- DEFAULT NAVBAR -->
+
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+</body>
+<script>
+
+function mainwindow() {
+	document.location.href = "http://localhost:8087/mainWindow.html?"
+			+ "username=" + getQueryVariable("username")
+			+ "&usersmartspace=" + getQueryVariable("usersmartspace")
+			+ "&email=" + getQueryVariable("email") 
+			+ "&role="+ getQueryVariable("role")
+			+ "&points="+ getQueryVariable("points")
+			+ "&avatar="+ getQueryVariable("avatar");
+
+}
+
+	function insertEmployee() {
+		document.location.href = "http://localhost:8087/employeebar.html?"
+			+ "username=" + getQueryVariable("username")
+			+ "&usersmartspace=" + getQueryVariable("usersmartspace")
+			+ "&email=" + getQueryVariable("email") 
+			+ "&role="+ getQueryVariable("role")
+			+ "&points="+ getQueryVariable("points")
+			+ "&avatar="+ getQueryVariable("avatar");
+
+	}
+
+	function insertDepartment() {
+		document.location.href = "http://localhost:8087/departmentbar.html?"
+			+ "username=" + getQueryVariable("username")
+			+ "&usersmartspace=" + getQueryVariable("usersmartspace")
+			+ "&email=" + getQueryVariable("email") 
+			+ "&role="+ getQueryVariable("role")
+			+ "&points="+ getQueryVariable("points")
+			+ "&avatar="+ getQueryVariable("avatar");
+	}
+
+	function insertTasks() {
+		document.location.href = "http://localhost:8087/tasksbar.html?"
+			+ "username=" + getQueryVariable("username")
+			+ "&usersmartspace=" + getQueryVariable("usersmartspace")
+			+ "&email=" + getQueryVariable("email") 
+			+ "&role="+ getQueryVariable("role")
+			+ "&points="+ getQueryVariable("points")
+			+ "&avatar="+ getQueryVariable("avatar");
+
+	}
+
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i = 0; i < vars.length; i++) {
+			var pair = vars[i].split("=");
+			if (pair[0] == variable) {
+				return pair[1];
+			}
+		}
+		return (false);
+	}
+</script>
+
+</html>
+
